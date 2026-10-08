@@ -9,6 +9,8 @@ use App\Http\Controllers\ManutencaoController;
 use App\Http\Controllers\OrdemProducaoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\TarefaController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\MovimentacaoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -51,6 +53,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('usuarios', UsuarioController::class);
 
     Route::resource('tarefas', TarefaController::class);
+
+    Route::resource('produtos', ProdutoController::class);
+
+    Route::resource('movimentacoes', MovimentacaoController::class);
 });
 
 require __DIR__.'/auth.php';
